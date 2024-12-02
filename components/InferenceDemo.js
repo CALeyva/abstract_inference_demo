@@ -156,8 +156,8 @@ export default function InferenceDemo() {
           />
           <PatternDisplay
             title="Second Pattern"
-            animals={shapes}
-            shapes={animals}
+            shapes={shapes}
+            animals={animals}
             isFirst={false}
           />
         </div>
