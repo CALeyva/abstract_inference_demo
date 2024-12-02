@@ -55,6 +55,7 @@ export default function InferenceDemo() {
 
     setResponses(newResponses);
     setScore(score + (correct ? 25 : 0));
+    console.log('Feedback set to:', feedback);
     setFeedback(correct ? '✅ Correct! +25 points' : '❌ Incorrect');
 
     if (trialCount + 1 >= TOTAL_TRIALS) {
