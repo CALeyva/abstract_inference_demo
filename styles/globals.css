@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transform.perspective-1000 {
+  transform: perspective(1000px) rotateX(60deg);
+}
