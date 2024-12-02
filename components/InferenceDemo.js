@@ -113,22 +113,27 @@ export default function InferenceDemo() {
   }
 
   function PatternDisplay({ title, animals, shapes, isFirst }) {
+    // Determine labels based on the pattern context
+    const firstLabel = isFirst ? 'Animals' : 'Shapes';
+    const secondLabel = isFirst ? 'Shapes' : 'Animals';
+
     return (
       <div className="flex flex-col items-center gap-4 w-1/2">
         <h3 className="font-semibold text-lg">{title}</h3>
         <div className="flex gap-8 items-start justify-center w-full">
           <div className="flex flex-col items-center w-40">
             <Bucket side="left" items={animals} isFirst={isFirst} />
-            <div className="mt-2 font-medium">Animals</div>
+            <div className="mt-2 font-medium">{firstLabel}</div>
           </div>
           <div className="flex flex-col items-center w-40">
             <Bucket side="right" items={shapes} isFirst={isFirst} />
-            <div className="mt-2 font-medium">Shapes</div>
+            <div className="mt-2 font-medium">{secondLabel}</div>
           </div>
         </div>
       </div>
     );
   }
+
 
   function ResultsTimeline({ responses, onReset }) {
     const switchPoint = 4;
@@ -156,8 +161,8 @@ export default function InferenceDemo() {
           />
           <PatternDisplay
             title="Second Pattern"
-            shapes={shapes}
-            animals={animals}
+            animals={shapes}
+            shapes={animals}
             isFirst={false}
           />
         </div>
