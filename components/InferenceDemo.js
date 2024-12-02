@@ -63,6 +63,7 @@ export default function InferenceDemo() {
       setTimeout(() => {
         setTrialCount(trialCount + 1);
         setLastResponse(null);
+        setFeedback('');
       }, 1000);
     }
   };
